@@ -1,38 +1,293 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #282c34;
   color: white;
+  min-height: 100vh;
+  transition: background-color 0.2s linear;
 }
 
-.App-link {
-  color: #61dafb;
+/*
+===============
+Header
+===============
+*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  max-width: 30rem;
+  min-width: 12rem;
+  width: 88vw;
+}
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-size: 2rem;
+  z-index: 1;
+  cursor: pointer;
+}
+.theme-switch-container {
+  cursor: pointer;
+  z-index: 1;
+}
+.bg-img {
+  height: 234px;
+  width: 100%;
+  background-image: url(./images/bg-mobile-dark.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/*
+===============
+Main
+===============
+*/
+main {
+  margin-top: 3rem;
+  z-index: 1;
+  max-width: 30rem;
+  min-width: 12rem;
+  width: 88vw;
+}
+/* input */
+#todo-input {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: none;
+  transition: all 150ms ease-in-out;
+}
+#todo-input:focus-visible {
+  outline-offset: 4px;
+  outline: rgb(128, 187, 255) solid;
+  border-radius: 5px;
+  border: none;
+}
+/* list */
+.todo-list {
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  padding-top: 0.5rem;
+  background-color: #2e2f3e;
+  transition: background-color 0.2s linear;
+  box-shadow: 0px 35px 50px 0px rgb(0 0 0 / 10%);
+}
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(94, 94, 94);
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: 0.5rem 1rem 0.5rem;
+  padding-right: 1rem;
+  transition: border-bottom 0.2s linear;
+}
+/* item left hzchekmark */
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.item-left p:first-letter {
+  text-transform: capitalize;
+}
+.checkmark-container {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  border: 1px solid gray;
+}
+.complete .checkmark-container {
+  background-image: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: none;
+}
+.complete {
+  text-decoration: line-through;
+  color: #797979;
+}
+/* delete right side */
+.delete {
+  padding: 0.5rem;
+  cursor: pointer;
+  transform: scale(0.7);
+  top: 3px;
+  position: relative;
+}
+.delete svg path {
+  fill: #7a61ae;
+}
+/* bottom list container */
+.list-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 1.2rem;
+}
+.items-left-amount {
+  color: hsl(234, 11%, 52%);
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+.clear-btns-container {
+  display: flex;
+}
+.clear-btns-container button {
+  font-size: 0.8rem;
+}
+.clear-btns-container button + button {
+  margin-left: 0.5rem;
+}
+.clear-btns-container button {
+  color: hsl(234, 11%, 52%);
+}
+/* sort */
+.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem 1.2rem;
+  padding-bottom: 0;
+}
+.sort button {
+  color: hsl(234, 11%, 52%);
+}
+.sort .active {
+  color: hsl(220, 98%, 61%);
+}
+
+/*
+===============
+Hover
+===============
+*/
+@media (hover) {
+  .delete:hover path {
+    fill: rgb(255 17 17);
   }
-  to {
-    transform: rotate(360deg);
+  .checkmark-container:hover {
+    border: 1px solid rgb(173, 173, 173);
+  }
+  .complete .checkmark-container:hover {
+    outline: none;
+    border: none;
+    filter: brightness(1.1);
+  }
+  .clear-btns-container button:hover {
+    color: hsl(235, 19%, 35%);
+  }
+  .sort button:hover {
+    color: hsl(233, 11%, 84%);
+  }
+  .clear-btns-container button:hover {
+    color: hsl(233, 11%, 84%);
+  }
+}
+
+/*
+===============
+Light mode theme
+===============
+*/
+.App.light {
+  background-color: hsl(0, 0%, 98%);
+}
+.light .bg-img {
+  background-image: url(./images/bg-mobile-light.jpg);
+}
+.light .todo-list {
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0px 35px 50px 0px rgb(119 107 148 / 25%);
+}
+.light .item-container {
+  color: hsl(235, 19%, 35%);
+  border-bottom: 1px solid rgb(219 215 215);
+}
+.light .complete {
+  color: hsl(233, 11%, 84%);
+}
+.light .items-left-amount {
+  color: rgb(161 167 177);
+}
+.light .list-bottom-container button {
+  color: rgb(161 167 177);
+}
+.light .sort button {
+  color: rgb(161 167 177);
+}
+.sort button.active {
+  color: hsl(220, 98%, 61%);
+}
+/* light mode hover */
+@media (hover) {
+  .light .delete:hover path {
+    fill: rgb(189, 5, 5);
+  }
+  .light .clear-btns-container button:hover {
+    color: hsl(235, 19%, 35%);
+  }
+  .light .sort .button:hover {
+    color: hsl(235, 19%, 35%);
+  }
+}
+
+/*
+===============
+Desktop
+===============
+*/
+@media (min-width: 375px) {
+  .bg-img {
+    background-image: url(./images/bg-desktop-dark.jpg);
+  }
+  .light .bg-img {
+    background-image: url(./images/bg-desktop-light.jpg);
+  }
+  .item-container {
+    padding: 0.5rem 2rem 0.5rem;
+    padding-right: 1.5rem;
+  }
+  .list-bottom-container {
+    padding: 1rem 2rem 1.2rem;
+  }
+  .clear-btns-container button + button {
+    margin-left: 1rem;
   }
 }
