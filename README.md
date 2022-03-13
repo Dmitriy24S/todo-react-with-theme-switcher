@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# React todo app with theme switcher
+
+![Design preview for React todo app with theme switcher](./design/desktop-preview.jpg)
+
+## Welcome 
+
+React todo app with theme switcher. Made with React & CSS.
+
+[Live Demo](https://dmitriy24s.github.io/todo-react-with-theme-switcher/) 👈
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
