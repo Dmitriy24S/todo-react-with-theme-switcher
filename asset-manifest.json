@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/todo-react-with-theme-switcher/static/css/main.829ab517.css",
-    "main.js": "/todo-react-with-theme-switcher/static/js/main.b59d361d.js",
+    "main.js": "/todo-react-with-theme-switcher/static/js/main.faa8a692.js",
     "static/media/bg-desktop-light.jpg": "/todo-react-with-theme-switcher/static/media/bg-desktop-light.3508d620efd5a52bb4ce.jpg",
     "static/media/bg-desktop-dark.jpg": "/todo-react-with-theme-switcher/static/media/bg-desktop-dark.73e47dbb723ebc772ef0.jpg",
     "index.html": "/todo-react-with-theme-switcher/index.html",
@@ -10,10 +10,10 @@
     "static/media/icon-cross.svg": "/todo-react-with-theme-switcher/static/media/icon-cross.6ee81d30b75cab19d6f7314624fcc4d6.svg",
     "static/media/icon-check.svg": "/todo-react-with-theme-switcher/static/media/icon-check.a8fb15d0278c8e312df5fc8364fef863.svg",
     "main.829ab517.css.map": "/todo-react-with-theme-switcher/static/css/main.829ab517.css.map",
-    "main.b59d361d.js.map": "/todo-react-with-theme-switcher/static/js/main.b59d361d.js.map"
+    "main.faa8a692.js.map": "/todo-react-with-theme-switcher/static/js/main.faa8a692.js.map"
   },
   "entrypoints": [
     "static/css/main.829ab517.css",
-    "static/js/main.b59d361d.js"
+    "static/js/main.faa8a692.js"
   ]
 }
